@@ -6,8 +6,8 @@ variables:
   releaseBranchName: 'release'
 
 schedules:
-- cron: '0 21 * * *'
-  displayName: Deploy every day at 9 P.M.
+- cron: '0 3 * * *'
+  displayName: Deploy every day at 3 A.M.
   branches:
     include:
     - release
@@ -128,7 +128,7 @@ stages:
               package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
 
 - stage: 'Staging'
-  displayName: 'Deploy to the staging environment'
+  displayName: 'Deploy to the stage environment'
   dependsOn: Test
   jobs:
   - deployment: Deploy
