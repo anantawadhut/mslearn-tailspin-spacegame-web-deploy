@@ -1,6 +1,8 @@
+//using Microsoft.Edge.SeleniumTools;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Support.UI;
@@ -68,6 +70,7 @@ namespace UITests
             }
             catch (WebDriverException)
             {
+                
                 Cleanup();
             }
         }
@@ -121,7 +124,7 @@ namespace UITests
             Assert.That(modalWasDisplayed, Is.True);
         }
 
-        private IWebElement FindElement(By locator, IWebElement parent = null, int timeoutSeconds = 10)
+        private IWebElement FindElement(By locator, IWebElement parent = null, int timeoutSeconds = 30)
         {
             // WebDriverWait enables us to wait for the specified condition to be true
             // within a given time period.
