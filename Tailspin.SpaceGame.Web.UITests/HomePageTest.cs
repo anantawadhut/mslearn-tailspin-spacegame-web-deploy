@@ -43,9 +43,9 @@ namespace UITests
                   case "Firefox":
                     driver = new FirefoxDriver(cwd);
                     break;
-                  case "IE":
-                    driver = new InternetExplorerDriver(cwd);
-                    break;
+                  //case "IE":
+                    //driver = new InternetExplorerDriver(cwd);
+                    //break;
                   default:
                     throw new ArgumentException($"'{browser}': Unknown browser");
                 }
